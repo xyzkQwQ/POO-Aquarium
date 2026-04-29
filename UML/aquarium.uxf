@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>605</x>
+      <y>240</y>
+      <w>120</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+/Poisson/
+--
+
+- nom: String
+- sex : Enum Sex
+
+--
+
++ Poisson(nom: String, sex: Sex)
++ getNom(): String
++ setNom(nom: String): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>695</x>
+      <y>400</y>
+      <w>120</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>PoissonHerbivore
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>545</x>
+      <y>400</y>
+      <w>120</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+/PoissonCarnivore/
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>625</x>
+      <y>365</y>
+      <w>45</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>705</x>
+      <y>365</y>
+      <w>45</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>325</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+/Carnivore/
+--
+
+--
+/+mangerViande(poisson: Poisson): void/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>370</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>30.0;10.0;30.0;120.0;180.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>495</x>
+      <y>540</y>
+      <w>105</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>Merou
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>625</x>
+      <y>540</y>
+      <w>105</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>Thon
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>565</x>
+      <y>440</y>
+      <w>45</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>440</y>
+      <w>45</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>740</y>
+      <w>120</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+/Poisson/
+--
+
+- nom: String
+- sex : Enum Sex
+
+--
+
++ Poisson(nom: String, sex: Sex)
++ getNom(): String
++ setNom(nom: String): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>425</x>
+      <y>810</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+/Carnivore/
+--
+
+--
+/+mangerViande(poisson: Poisson): void/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>485</x>
+      <y>855</y>
+      <w>70</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0;120.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>545</x>
+      <y>900</y>
+      <w>145</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+/PoissonCarnivore/
+--
+- raceCarnivore: Enum RaceCarnivore
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>865</y>
+      <w>45</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>730</x>
+      <y>865</y>
+      <w>45</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>915</y>
+      <w>120</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>PoissonHerbivore
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>425</x>
+      <y>940</y>
+      <w>105</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+RaceCarnivore
+--
+MEROU
+THON
+POISSON_CLOWN
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>280</y>
+      <w>85</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..*</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>835</x>
+      <y>350</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+/Herbivore/
+--
+
+--
+/+mangerAlgue(algue: Algue): void/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>395</y>
+      <w>75</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>130.0;10.0;130.0;60.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>475</x>
+      <y>235</y>
+      <w>120</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Algue
+--
+
+
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>795</x>
+      <y>245</y>
+      <w>105</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Aquarium
+--
+
+--
++main(args: String[])
+
++faireMangerPoissons(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>555</x>
+      <y>125</y>
+      <w>105</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+/EtreVivant/
+--
+
+- PV: int
+# age: int
+
+--
++getPV(): int
++ incrementAge(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>195</y>
+      <w>45</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>625</x>
+      <y>195</y>
+      <w>45</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>380</x>
+      <y>725</y>
+      <w>570</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>Autre proposition avec les enum
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
