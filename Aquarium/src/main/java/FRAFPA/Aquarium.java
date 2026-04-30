@@ -28,33 +28,43 @@ public class Aquarium {
         poissons.add(new Thon("Adrien", Sex.MALE));
         poissons.add(new PoissonClown("Kevin", Sex.MALE));
 
-        poissons.add(new Merou("Maxime", Sex.FEMELLE));
-        poissons.add(new Bar("Josua", Sex.FEMELLE));
-        poissons.add(new Carpe("Esteban", Sex.FEMELLE));
-        poissons.add(new Sole("Enzo", Sex.FEMELLE));
-        poissons.add(new Thon("Adrien", Sex.FEMELLE));
-        poissons.add(new PoissonClown("Kevin", Sex.FEMELLE));
+        poissons.add(new Merou("Maxouchoubidou", Sex.FEMELLE));
+        poissons.add(new Bar("Josualagrossefolle", Sex.FEMELLE));
+        poissons.add(new Carpe("Estebannette", Sex.FEMELLE));
+        poissons.add(new Sole("Enzounette", Sex.FEMELLE));
+        poissons.add(new Thon("Adrienne", Sex.FEMELLE));
+        poissons.add(new PoissonClown("Kevinnette", Sex.FEMELLE));
 
         boolean over = false;
         Poisson poissonPredateurGagnant = null;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 1; i < 11; i++) {
+
+            System.out.println("Tour : " + i);
+            System.out.println();
 
             for (int iPoisson = 0; iPoisson < poissons.size(); iPoisson++) {
 
                 Poisson poissonPredateur = poissons.get(iPoisson); // Tous les poissons
                 int poissonPredateurHP = poissonPredateur.getPv();
+
+                System.out.println(
+                        poissonPredateur.getNom() + " est entrain de jouer, va perdre 1 PV, il a actuellement : "
+                                + poissonPredateur.getPv() + " PV");
+
                 poissonPredateurHP = poissonPredateurHP - 1;
                 poissonPredateur.setPv(poissonPredateurHP);
-                System.out.println(poissonPredateur.getNom() + " a " + poissonPredateur.getPv() + " pv");
+
+                System.out.println(poissonPredateur.getNom() + " a " + poissonPredateur.getPv() + " PV");
 
                 if (poissonPredateur.getPv() <= 5) {
 
                     // if (poissons.get(iPoisson) instanceof PoissonCarnivore poissonPredateur)
-                    if (poissonPredateur instanceof PoissonCarnivore) {
+                    if (poissonPredateur instanceof PoissonCarnivore poissonPredateurCarnivore) {
 
                         Random rand = new Random();
                         int randomPoissonProieIndex = rand.nextInt(poissons.size());
+
                         Poisson poissonProie = poissons.get(randomPoissonProieIndex);
                         int poissonProieHP = poissonProie.getPv();
 
@@ -62,16 +72,24 @@ public class Aquarium {
                             System.out
                                     .println(poissonPredateur.getNom() + " Impossible de manger "
                                             + poissonProie.getNom());
+
+                        } else if (poissonPredateur.getClass() == poissonProie.getClass()) {
+
+                            System.out.println("PEUT PAS MANGER UN POISSON DE LA MEME ESPECE");
+
                         } else {
 
-                            ((PoissonCarnivore) poissonPredateur).mangerPoisson(poissonProie);
-                            poissonProieHP = poissonProieHP - 4;
-                            poissonProie.setPv(poissonProieHP);
-                            System.out.println(poissonProie.getNom() + " a " + poissonProie.getPv() + " pv");
+                            System.err.println(poissonProie.getNom() + " avait " + poissonProie.getPv() + " PV");
+
+                            poissonPredateurCarnivore.mangerPoisson(poissonProie);
+
+                            System.out.println(poissonProie.getNom() + " s'est fait manger et à perdu 4 PV, il a donc maintenant : " + poissonProie.getPv() + " PV");
 
                             if (poissonProieHP <= 0) {
+
                                 System.out.println(poissonProie.getNom() + " est mort");
                                 poissons.remove(poissonProie);
+
                             }
                             // poissons.remove(poissonProie);
 
@@ -88,7 +106,9 @@ public class Aquarium {
                         Random rand = new Random();
                         int randomAlgueIndex = rand.nextInt(algues.size());
                         Algue algueProie = algues.get(randomAlgueIndex);
+
                         ((PoissonHerbivore) poissonPredateur).mangerAlgue(algueProie);
+
                         System.out.println("=====================");
                     }
                 }
