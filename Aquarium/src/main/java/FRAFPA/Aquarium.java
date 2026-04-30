@@ -38,9 +38,9 @@ public class Aquarium {
         boolean over = false;
         Poisson poissonPredateurGagnant = null;
 
-        for (int i = 1; i < 11; i++) {
+        for (int nombreTour = 1; nombreTour < 30; nombreTour++) {
 
-            System.out.println("Tour : " + i);
+            System.out.println("Tour : " + nombreTour);
             System.out.println();
 
             for (int iPoisson = 0; iPoisson < poissons.size(); iPoisson++) {
@@ -48,9 +48,17 @@ public class Aquarium {
                 Poisson poissonPredateur = poissons.get(iPoisson); // Tous les poissons
                 int poissonPredateurHP = poissonPredateur.getPv();
 
+                poissonPredateur.incrementAge(); // ajoute 1 an au poisson
+                if (poissonPredateur.getAge() > 20) {
+                    System.out
+                            .println(poissonPredateur.getNom() + " est mort à l'age de : " + poissonPredateur.getAge());
+                    poissons.remove(poissonPredateur);
+                    continue;
+                }
+
                 System.out.println(
                         poissonPredateur.getNom() + " est entrain de jouer, va perdre 1 PV, il a actuellement : "
-                                + poissonPredateur.getPv() + " PV");
+                                + poissonPredateur.getPv() + " PV et a : " + poissonPredateur.getAge() + " ans");
 
                 poissonPredateurHP = poissonPredateurHP - 1;
                 poissonPredateur.setPv(poissonPredateurHP);
@@ -83,7 +91,9 @@ public class Aquarium {
 
                             poissonPredateurCarnivore.mangerPoisson(poissonProie);
 
-                            System.out.println(poissonProie.getNom() + " s'est fait manger et à perdu 4 PV, il a donc maintenant : " + poissonProie.getPv() + " PV");
+                            System.out.println(poissonProie.getNom()
+                                    + " s'est fait manger et à perdu 4 PV, il a donc maintenant : "
+                                    + poissonProie.getPv() + " PV");
 
                             if (poissonProieHP <= 0) {
 
@@ -111,6 +121,7 @@ public class Aquarium {
 
                         System.out.println("=====================");
                     }
+
                 }
             }
 
