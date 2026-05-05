@@ -49,6 +49,12 @@ public class Aquarium {
                 int poissonPredateurHP = poissonPredateur.getPv();
 
                 poissonPredateur.incrementAge(); // ajoute 1 an au poisson
+                if (poissonPredateur.getAge() == 20) {
+                    System.out
+                            .println(poissonPredateur.getNom() + " est mort à l'age de : " + poissonPredateur.getAge());
+                    poissons.remove(poissonPredateur);
+                    continue;
+                }
                 if (poissonPredateur.getAge() > 20) {
                     System.out
                             .println(poissonPredateur.getNom() + " est mort à l'age de : " + poissonPredateur.getAge());
@@ -64,7 +70,6 @@ public class Aquarium {
                 poissonPredateur.setPv(poissonPredateurHP);
 
                 System.out.println(poissonPredateur.getNom() + " a " + poissonPredateur.getPv() + " PV");
-
                 if (poissonPredateur.getPv() <= 5) {
 
                     // if (poissons.get(iPoisson) instanceof PoissonCarnivore poissonPredateur)
