@@ -17,6 +17,10 @@ public class EtreVivant {
         return age;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public void setPv(int pv) {
         this.pv = pv;
     }
