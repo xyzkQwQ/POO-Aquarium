@@ -1,5 +1,7 @@
 package FRAFPA;
 
+import java.util.Random;
+
 import FRAFPA.enums.Sex;
 
 public class Poisson extends EtreVivant {
@@ -10,10 +12,18 @@ public class Poisson extends EtreVivant {
         super(10, 0);
         this.nom = nom;
         this.sex = sex;
+
+           Random rand = new Random();
+        this.setAge(rand.nextInt(10));
     }
+    
 
     public String getNom() {
         return nom;
+    }
+
+    public Sex getSexe() {
+        return sex;
     }
 
     @Override
