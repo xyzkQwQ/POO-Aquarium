@@ -66,7 +66,6 @@ public class Aquarium {
                 }
 
                 // Perte PV
-                int ancienPv = poisson.getPv();
                 poisson.setPv(poisson.getPv() - 1);
 
                 if (poisson.getPv() <= 0) {

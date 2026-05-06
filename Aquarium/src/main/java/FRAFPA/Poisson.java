@@ -52,6 +52,8 @@ public abstract class Poisson extends EtreVivant {
         return this.getClass().getSimpleName();
     }
 
+
+    
     @Override
     public String toString() {
         return "Poisson [nom=" + nom + ", sexe=" + sexe + "]";
