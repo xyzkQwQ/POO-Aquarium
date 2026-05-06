@@ -48,6 +48,10 @@ public abstract class Poisson extends EtreVivant {
         reproductionStrategie.majSexeSelonAge(this);
     }
 
+    public String getType() {
+        return this.getClass().getSimpleName();
+    }
+
     @Override
     public String toString() {
         return "Poisson [nom=" + nom + ", sexe=" + sexe + "]";

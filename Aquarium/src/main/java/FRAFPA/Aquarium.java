@@ -42,19 +42,25 @@ public class Aquarium {
 
             RapportTour rapport = new RapportTour(tour);
 
+            // for (Poisson poisson : poissons) {
+
+            // }
+
             for (int i = poissons.size() - 1; i >= 0; i--) {
 
                 Poisson poisson = poissons.get(i);
                 boolean aDejaReproduit = false;
 
                 // Vieillissement
+                // poisson.veillir();
                 int ancienAge = poisson.getAge();
                 poisson.setAge(poisson.getAge() + 1);
-                rapport.addEvolution(poisson.getNom() + " âge " + ancienAge + " ans -> " + poisson.getAge() + " ans ");
+                rapport.addEvolution(poisson.getNom() + " (" + poisson.getType() + ") âge "
+                        + ancienAge + " -> " + poisson.getAge());
 
                 if (poisson.getAge() >= 20) {
 
-                    rapport.addMort(poisson.getNom() + " est mort de vieillesse");
+                    rapport.addMort(poisson.getNom() + " (" + poisson.getType() + ") est mort de vieillesse");
                     poissons.remove(i);
                     continue;
                 }
@@ -64,7 +70,7 @@ public class Aquarium {
                 poisson.setPv(poisson.getPv() - 1);
 
                 if (poisson.getPv() <= 0) {
-                    rapport.addMort(poisson.getNom() + " est mort (PV = 0)");
+                    rapport.addMort(poisson.getNom() + " (" + poisson.getType() + ") est mort (PV = 0)");
                     poissons.remove(i);
                     continue;
                 }
@@ -81,10 +87,10 @@ public class Aquarium {
                             if (poisson != proie && poisson.getClass() != proie.getClass()) {
 
                                 carnivore.mangerPoisson(proie);
-                                rapport.addAction(poisson.getNom() + " mange " + proie.getNom());
-
+                                rapport.addAction(poisson.getNom() + " (" + poisson.getType() + ") mange "
+                                        + proie.getNom() + " (" + proie.getType() + ")");
                                 if (proie.getPv() <= 0) {
-                                    rapport.addMort(proie.getNom() + " est mangé");
+                                    rapport.addMort(poisson.getNom() + " (" + poisson.getType() + " est mangé");
                                     poissons.remove(proie);
                                 }
                             }
@@ -97,7 +103,7 @@ public class Aquarium {
                             Algue algue = algues.get(rand.nextInt(algues.size()));
 
                             herbivore.mangerAlgue(algue);
-                            rapport.addAction(poisson.getNom() + " mange une algue");
+                            rapport.addAction(poisson.getNom() + " (" + poisson.getType() + ") mange une algue");
 
                         }
                     }
@@ -119,8 +125,9 @@ public class Aquarium {
 
                             if (bebe != null) {
                                 poissons.add(bebe);
-                                rapport.addReproduction(poisson.getNom() + " + " + partenaire.getNom()
-                                        + " -> " + bebe.getNom());
+                                rapport.addReproduction(poisson.getNom() + " (" + poisson.getType() + ") + "
+                                        + partenaire.getNom() + " (" + partenaire.getType() + ") -> "
+                                        + bebe.getNom() + " (" + bebe.getType() + ")");
                                 aDejaReproduit = true;
                             }
                         }
@@ -179,7 +186,7 @@ public class Aquarium {
             return new Thon(nom, sexe);
         if (parent instanceof PoissonClown)
             return new PoissonClown(nom, sexe);
-
+    
         return null;
     }
 }
