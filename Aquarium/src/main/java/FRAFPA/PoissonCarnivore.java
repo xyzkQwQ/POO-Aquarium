@@ -1,11 +1,11 @@
 package FRAFPA;
 
-import FRAFPA.enums.Sex;
+import FRAFPA.enums.Sexe;
 
 public abstract class PoissonCarnivore extends Poisson {
 
-    public PoissonCarnivore(String nom, Sex sex) {
-        super(nom, sex);
+    public PoissonCarnivore(String nom, Sexe sexe) {
+        super(nom, sexe);
         // TODO Auto-generated constructor stub
     }
 
@@ -18,9 +18,9 @@ public abstract class PoissonCarnivore extends Poisson {
         // 2 - perte de HP pour la proie
         int newProieHP = poissonProie.getPv() - 4;
         poissonProie.setPv(newProieHP);
-        
-        System.out.println("predateur " + this.getNom() + " à mangé " + poissonProie.getNom());
 
-        System.err.println( this.getNom() + " à récupéré " + "5 PV, il a maintenant : " + this.getPv() + " PV");
+        System.out.println("predateur " + this.getNom() + " à mangé " + poissonProie.getNom());
+        System.err.println(this.getNom() + " à récupéré " + "5 PV, il a maintenant : " + this.getPv() + " PV");
+        System.out.println();
     }
 }

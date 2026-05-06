@@ -1,6 +1,6 @@
 package FRAFPA.enums;
 
-public enum Sex {
+public enum Sexe {
     MALE,
     FEMELLE
 };

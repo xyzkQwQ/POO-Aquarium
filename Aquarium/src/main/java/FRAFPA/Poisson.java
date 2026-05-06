@@ -2,33 +2,32 @@ package FRAFPA;
 
 import java.util.Random;
 
-import FRAFPA.enums.Sex;
+import FRAFPA.enums.Sexe;
 
-public class Poisson extends EtreVivant {
+public abstract class Poisson extends EtreVivant {
     private String nom;
-    private Sex sex;
+    private Sexe sexe;
 
-    public Poisson(String nom, Sex sex) {
+    public Poisson(String nom, Sexe sexe) {
         super(10, 0);
         this.nom = nom;
-        this.sex = sex;
-
-           Random rand = new Random();
+        this.sexe = sexe;
+        
+        Random rand = new Random();
         this.setAge(rand.nextInt(10));
     }
-    
 
     public String getNom() {
         return nom;
     }
 
-    public Sex getSexe() {
-        return sex;
+    public Sexe getSexe() {
+        return sexe;
     }
 
     @Override
     public String toString() {
-        return "Poisson [nom=" + nom + ", sex=" + sex + "]";
+        return "Poisson [nom=" + nom + ", sexe=" + sexe + "]";
     }
 
 }

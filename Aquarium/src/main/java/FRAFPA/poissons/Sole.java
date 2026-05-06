@@ -1,13 +1,13 @@
 package FRAFPA.poissons;
 
 import FRAFPA.PoissonHerbivore;
-import FRAFPA.enums.Sex;
+import FRAFPA.enums.Sexe;
 
 public class Sole extends PoissonHerbivore {
 
-    public Sole(String nom, Sex sex) {
-        super(nom, sex);
+    public Sole(String nom, Sexe sexe) {
+        super(nom, sexe);
         //TODO Auto-generated constructor stub
     }
-
+    
 }

@@ -1,12 +1,12 @@
 package FRAFPA.poissons;
 
 import FRAFPA.PoissonCarnivore;
-import FRAFPA.enums.Sex;
+import FRAFPA.enums.Sexe;
 
 public class PoissonClown extends PoissonCarnivore {
 
-    public PoissonClown(String nom, Sex sex) {
-        super(nom, sex);
+    public PoissonClown(String nom, Sexe sexe) {
+        super(nom, sexe);
         //TODO Auto-generated constructor stub
     }
     
